@@ -27,12 +27,12 @@ class Ractangle implements Shape {
 }
 //도형 팩토리 인터페이스
 
-interface ShapFactory {
+interface ShapeFactory {
 
 	Shape crateShape();
 }
 
-class CirclaFactory implements ShapFactory {
+class CirclaFactory implements ShapeFactory {
 
 	@Override
 	public Shape crateShape() {
@@ -42,7 +42,7 @@ class CirclaFactory implements ShapFactory {
 
 }
 
-class RectangleFactory implements ShapFactory {
+class RectangleFactory implements ShapeFactory {
 
 	@Override
 	public Shape crateShape() {
@@ -54,7 +54,7 @@ class RectangleFactory implements ShapFactory {
 
 
 class ShapeFactoryCreator{
-	public static ShapFactory createFactory(Class<? extends Shape> clazz) {
+	public static ShapeFactory createFactory(Class<? extends Shape> clazz) {
 		
 		if(clazz.equals(Circle.class)) {
 			
@@ -77,7 +77,10 @@ public class WildcardTest03 {
 
 	public static void main(String[] args) {
 
-		ShapeFactoryCreator.createFactory(Circle.class);
+		ShapeFactory sre= ShapeFactoryCreator.createFactory(Circle.class);
+		//Shape circle =CirclaFactory.crateShape();
+		
+		
 	}
 
 }
