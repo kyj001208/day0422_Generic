@@ -10,13 +10,13 @@ public class WilecardTest02 {
 		return List.of("몽","여름");
 	}
 	
-	//상위 제한 와일드카드: Number가 최상위
+	//리턴형 상위 제한 와일드카드: Number가 최상위
 	public static List<? extends Number> getNumbers(){
 		
 		return List.of(1,2,3,4,5,2.5,3.5,10L); //정수, 실수 같이 사용 가능 (Number를 부모로 가지고 있는 자식 클래스 모두 허용)
 	}
 	
-	//하위 제한 와일드카드
+	//리턴형 하위 제한 와일드카드 : 상황에 따라 적절학 사용 필요
 		public static List<? super Integer> getNumbers1(){ //하위 경우 Integer 상위 클래스로는 Number도 있지만 Object도 있다
 			
 			return List.of(1,2,3,4); //그러기에 리턴형이 문자열, 문자형, 실수 정수 모두 가능
